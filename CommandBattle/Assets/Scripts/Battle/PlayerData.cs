@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System;
 using System.IO;
 using System.Security.Cryptography;
@@ -11,14 +10,13 @@ public class PlayerData : MonoBehaviour
     public int mp;
     public int attackPower;
     public int magicPower;
-    public int defensePower;
+    public int attackDefense;
+    public int magicDefense;
     public int speed;
 
     private void Awake()
     {
         Load();
-        Debug.Log(hp);
-        hp++;
     }
 
     private void OnDestroy()
@@ -133,7 +131,8 @@ public class PlayerData : MonoBehaviour
             mp = 20;
             attackPower = 5;
             magicPower = 5;
-            defensePower = 5;
+            attackDefense = 5;
+            magicDefense = 5;
             speed = 5;
         }
     }
@@ -148,7 +147,8 @@ public class PlayerData : MonoBehaviour
             mp = mp,
             attackPower = attackPower,
             magicPower = magicPower,
-            defensePower = defensePower,
+            attackDefense = attackDefense,
+            magicDefense = magicDefense,
             speed = speed
         };
 
@@ -162,7 +162,8 @@ public class PlayerData : MonoBehaviour
         mp = saveData.mp;
         attackPower = saveData.attackPower;
         magicPower = saveData.magicPower;
-        defensePower = saveData.defensePower;
+        attackDefense = saveData.attackDefense;
+        magicDefense = saveData.magicDefense;
         speed = saveData.speed;
     }
 
@@ -252,6 +253,7 @@ public class PlayerSaveData
     public int mp;
     public int attackPower;
     public int magicPower;
-    public int defensePower;
+    public int attackDefense;
+    public int magicDefense;
     public int speed;
 }
